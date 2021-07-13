@@ -3,19 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class PagesController extends Controller
 {
     public function index(){
-
+        
+        $data = Product::all();
         $logo = 'meds.jpg';
         $poster = 'pharmacy.jpg';
 
-        $Images = array('logo' => $logo ,
-                    'poster' => $poster);
+        $DataImages = array('logo' => $logo ,
+                    'poster' => $poster,'products' =>$data);
         
 
-        return view('pages.index')->with($Images);
+        return view('pages.index')->with($DataImages);
     }
     public function about(){
         $title = 'Aboutus';

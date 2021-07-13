@@ -14,7 +14,20 @@
           <a href="#" class="btn btn-lg btn-secondary" style="margin-left:20%">Learn more</a>
         </p>
       </main>
-<div style="margin-top:500px;"></div>
+
+
+<div style="margin-top:400px;"></div>
+<div class="card-columns">
+    @foreach($products as $product)
+  <div class="card">
+    <img class="card-img-top"  id="cardImage" src="/storage/{{ $product->gallery }}" >
+    <div class="card-body">
+      <h5 class="card-title">{{ $product->name }}</h5>
+      <p class="card-text">{{ $product->description }}</p>
+      <p class="card-text"><small class="text-muted">${{$product->price}}</small></p>
+    </div>
+  </div>
+  @endforeach
 @endsection
 
 
@@ -42,6 +55,9 @@
 
 body{
     overflow:auto;
+}
+#cardImage{
+    width:50%;
 }
 
 </style>
