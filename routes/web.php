@@ -30,3 +30,6 @@ Route::get('/about', [PagesController::class, 'about']);
 
 Route::get('/contact',[PagesController::class,'contact']);
 Route::get('/products',[ProductController::class,'products']);
+Route::get('detail/{id}',[ProductController::class,'detail']);
+
+Route::get('/search',[ProductController::class,'search']);
